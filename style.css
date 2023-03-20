@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    padding-top: 90px;
+    width: 500px;
+}
+
+@media screen and (max-width: 800px){
+    img{
+        padding-top: 80px;
+        width: 400px;
+    }
+}
