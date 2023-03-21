@@ -4,8 +4,38 @@
     <title>Le bonhomme rigolo</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script>
+        setInterval(function() {
+            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = "#" + randomColor;
+
+            // Vérifier si la couleur est une nuance de rouge
+            var redMin = parseInt("ff0000", 16) - 0x080808;
+            var redMax = parseInt("ff0000", 16) + 0x080808;
+            var color = parseInt(randomColor, 16);
+            var isRedShade = (color >= redMin && color <= redMax);
+            
+            // Modifier le contenu de l'élément "output" si la couleur est rouge
+            if (isRedShade) {
+                var outputElement = document.querySelector(".output");
+                if (outputElement) {
+                    outputElement.textContent = "Co-autrice de la page : @oceane.kgrst";
+                }
+            }
+            else{
+                var outputElement = document.querySelector(".output");
+                if (outputElement) {
+                    outputElement.textContent = "Auteur de la page : @numa_vrp42";
+                }
+            }
+        }, 700);
+    </script>
 </head>
 <body>
-    <img src="stickman.png">
+    <main>
+        <img src="stickman.png">
+        <p class="output">Auteur de la page : @numa_vrp42</p>
+    </main>
 </body>
 </html>
